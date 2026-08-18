@@ -1,0 +1,124 @@
+/* La feuille de style des pages publiques de SimplyCal.
+   Un seul fichier pour les trois pages : une politique qu'on corrige a trois
+   endroits finit par dire trois choses differentes, et la mise en page suit la
+   meme regle que le texte. */
+
+:root {
+  --fond: #f4f6f8;
+  --surface: #ffffff;
+  --encre: #1a1a1a;
+  --encre-douce: #6b7280;
+  --accent: #3b6fd4;
+  --filet: #dce1e8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fond: #0f0f1e;
+    --surface: #1a1a2e;
+    --encre: #ffffff;
+    --encre-douce: #b0aed1;
+    --accent: #6d95e6;
+    --filet: #2f2f47;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 20px 80px;
+  background: var(--fond);
+  color: var(--encre);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+
+main { max-width: 720px; margin: 0 auto; }
+
+header {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 0 28px;
+  border-bottom: 1px solid var(--filet);
+}
+
+.marque {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  text-decoration: none;
+  color: var(--encre);
+}
+
+.pastille {
+  background: var(--accent);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin: 26px 0 6px;
+}
+
+.date { color: var(--encre-douce); font-size: 15px; margin: 0; }
+
+h2 {
+  font-size: 20px;
+  line-height: 1.3;
+  margin: 34px 0 8px;
+}
+
+p { margin: 0 0 14px; color: var(--encre-douce); }
+
+.resume {
+  background: var(--surface);
+  border: 1px solid var(--filet);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 26px 0 0;
+}
+
+.resume p:last-child { margin-bottom: 0; }
+
+a { color: var(--accent); }
+
+footer {
+  max-width: 720px;
+  margin: 56px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--filet);
+  color: var(--encre-douce);
+  font-size: 15px;
+}
+
+footer a { margin-right: 14px; }
+
+/* Les cartes de la page d'accueil. */
+.liens { display: grid; gap: 14px; margin-top: 30px; }
+
+.carte {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--filet);
+  border-radius: 12px;
+  padding: 18px 20px;
+  text-decoration: none;
+  color: var(--encre);
+}
+
+.carte strong { display: block; font-size: 18px; margin-bottom: 4px; }
+.carte span { color: var(--encre-douce); font-size: 15px; }
