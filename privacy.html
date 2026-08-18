@@ -22,8 +22,8 @@
   <section class="resume">
     <h2>In short</h2>
     <p>Your food diary lives on your phone. That is where it is written, and that is where the app reads it from — including if you pay.</p>
-    <p>Two things are optional, and neither is on by default. You may <strong>sign in with a Google account</strong>, which is free and unlocks nothing on its own. And if you are a Premium subscriber and signed in, you may turn on <strong>cloud backup</strong>, which copies your diary to our servers so that a new phone can restore it.</p>
-    <p>If you never sign in, nothing about you reaches our servers, and the app works in full apart from that backup.</p>
+    <p><strong>There is no account.</strong> Nothing to create, no e-mail to give, no password to lose. If you subscribe to Premium, your purchase itself identifies you, and your diary is copied to our servers so that a new phone can restore it.</p>
+    <p>If you never buy anything, nothing about you ever reaches our servers, and the app works in full apart from that backup.</p>
   </section>
   <section>
     <h2>What the app stores on your device</h2>
@@ -31,16 +31,16 @@
     <p>This is the original. The cloud copy, when it exists, is a copy. Uninstalling SimplyCal deletes the device copy; see below for the cloud one.</p>
   </section>
   <section>
-    <h2>Signing in</h2>
-    <p>Signing in is free, optional, and does not unlock any paid feature. It exists so that a backup has somewhere to belong.</p>
-    <p>We use Google Sign-In through Firebase Authentication. When you sign in we receive, from Google, your <strong>name, e-mail address, profile picture address</strong> and an account identifier. We store them so the app can show whose account is open. We do not use them for advertising, we do not sell them, and we do not send them to anyone.</p>
-    <p>Signing out removes them from the device and deletes nothing from your diary.</p>
+    <h2>How you are identified — and what we never learn</h2>
+    <p>When you subscribe, Google Play gives the app a <strong>purchase token</strong>. The app sends it to our server, which asks Google Play whether the purchase is genuine. If it is, the server creates an anonymous identity for that purchase and gives the app a session for it.</p>
+    <p>That identity is a random string. <strong>We never learn your name, your e-mail address, or your Google account</strong> — Google does not tell us, and we do not ask. Nothing we hold can be traced back to you by us. What ties the backup to you is the purchase, and only Google knows who made it.</p>
+    <p>The app remembers your last purchase token on the phone so it can recognise you again after a plan change or a re-subscription. That token never leaves the device except to be checked with Google.</p>
   </section>
   <section>
     <h2>Cloud backup (Premium)</h2>
-    <p>If you are a Premium subscriber and signed in, the app copies to our servers: the foods and meals you created, your daily entries, your body measurements, your goals and the settings that are not specific to one phone. Photos you attached to your own foods and meals are copied too, reduced in size beforehand.</p>
+    <p>If you are a Premium subscriber, the app copies to our servers: the foods and meals you created, your daily entries, your body measurements, your goals and the settings that are not specific to one phone. Photos you attached to your own foods and meals are copied too, reduced in size beforehand.</p>
     <p>The theme, the display language, the reminder time and the subscription state are <strong>not</strong> copied: they belong to one phone.</p>
-    <p>The copy is stored with Google Cloud Firestore and Cloud Storage, in the <strong>northamerica-northeast1 region (Montréal, Canada)</strong>, in a space that only your account can read. Access is enforced by server-side security rules, not by the app.</p>
+    <p>The copy is stored with Google Cloud Firestore and Cloud Storage, in the <strong>northamerica-northeast1 region (Montréal, Canada)</strong>, in a space that only your own identity can read. Access is enforced by server-side security rules, not by the app.</p>
     <p>It exists for one purpose: so that a lost, broken or replaced phone can get your diary back.</p>
   </section>
   <section>
@@ -65,8 +65,7 @@
   <section>
     <h2>Subscriptions</h2>
     <p>Payment is handled entirely by Google Play. We never see your card or your billing address.</p>
-    <p>When you subscribe, Google Play gives the app a <strong>purchase token</strong>. If you are signed in, the app sends that token to our server, which presents it to Google Play to confirm that the purchase is genuine before opening the cloud backup. We keep the token, and the fact that it belongs to your account, for as long as the purchase is live — that is what stops one purchase from opening several accounts. The token identifies a purchase, not a person.</p>
-    <p>If you are not signed in, nothing about your purchase leaves your phone.</p>
+    <p>The purchase token described above is kept for as long as the purchase is live, together with the anonymous identity it opened. That is what lets the same person find their backup again after changing phone, and what stops one purchase from opening several spaces. The token identifies a purchase, not a person.</p>
   </section>
   <section>
     <h2>Analytics and advertising</h2>
@@ -76,12 +75,12 @@
     <h2>How long we keep the cloud copy</h2>
     <p>While your subscription is active, we keep it so it can be restored.</p>
     <p>When a subscription ends, the copy becomes <strong>read-only for 60 days</strong>: it stops receiving anything new, but a reinstall can still restore it. After those 60 days it is deleted automatically, along with the photos. Your device copy is never touched.</p>
-    <p>If you delete your account, everything we hold is deleted immediately — see <a href="delete-account.html">Delete your account</a>.</p>
+    <p>If you erase your online data, everything we hold is deleted immediately — see <a href="delete-account.html">Delete your account</a>.</p>
   </section>
   <section>
     <h2>Where your data is, and who processes it</h2>
     <p>The cloud copy is stored in Canada. Canada holds an adequacy decision from the European Commission, so data from the European Economic Area is transferred there without additional safeguards being required.</p>
-    <p>Our only processor is Google (Firebase Authentication, Cloud Firestore, Cloud Storage, Cloud Functions), acting on our instructions. Google Play acts as merchant of record for purchases, under its own terms.</p>
+    <p>Our only processor is Google (Firebase Authentication — used only to carry the anonymous session — Cloud Firestore, Cloud Storage, Cloud Functions), acting on our instructions. Google Play acts as merchant of record for purchases, under its own terms.</p>
   </section>
   <section>
     <h2>Children</h2>
@@ -90,8 +89,8 @@
   <section>
     <h2>Your rights</h2>
     <p>Under the GDPR, Canada's Personal Information Protection and Electronic Documents Act, British Columbia's Personal Information Protection Act and comparable laws, you have the right to access, correct, export and erase your personal data, and to withdraw consent.</p>
-    <p>Most of them you exercise yourself, without asking us: the data is visible in the app, editable in the app, exportable as a report, erased on your device by uninstalling, and erased on our servers by deleting your account. If you have never signed in, we hold nothing about you at all.</p>
-    <p>For anything else, write to the address below. We answer within 30 days. If you are in the EEA you may also complain to your national data protection authority; in Canada, to the Office of the Privacy Commissioner.</p>
+    <p>Most of them you exercise yourself, without asking us: the data is visible in the app, editable in the app, exportable as a report, erased on your device by uninstalling, and erased on our servers from <a href="delete-account.html">Settings → Backup</a>. If you have never subscribed, we hold nothing about you at all.</p>
+    <p>Because we hold no name and no e-mail address, we cannot find your data from an e-mail alone — the app is the only place that knows which identity is yours. That is a consequence of collecting nothing, and it is why deletion is built into the app itself. For anything else, write to the address below. We answer within 30 days. If you are in the EEA you may also complain to your national data protection authority; in Canada, to the Office of the Privacy Commissioner.</p>
   </section>
   <section>
     <h2>Changes to this policy</h2>
