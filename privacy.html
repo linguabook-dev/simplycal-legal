@@ -22,8 +22,9 @@
   <section class="resume">
     <h2>In short</h2>
     <p>Your food diary lives on your phone. That is where it is written, and that is where the app reads it from — including if you pay.</p>
-    <p><strong>Nothing to create, and no password.</strong> If you subscribe to Premium, you pick one of the Google accounts already on your phone — one tap — and your diary is copied to our servers so that any future phone can restore it.</p>
-    <p>If you never buy anything, <strong>you are never asked to sign in</strong>, nothing about you ever reaches our servers, and the app works in full apart from that backup.</p>
+    <p><strong>Nothing to create, and no password.</strong> SimplyCal asks you to pick one of the Google accounts already on your phone — one tap — and that account is your identity here. There is no form, no password, and nothing to remember.</p>
+    <p>That first sign-in needs a connection. <strong>Everything afterwards works offline</strong>, indefinitely.</p>
+    <p>Your diary is copied to our servers <strong>only if you subscribe to Premium</strong>. Without a subscription nothing you enter ever leaves your phone.</p>
   </section>
   <section>
     <h2>What the app stores on your device</h2>
@@ -32,16 +33,17 @@
   </section>
   <section>
     <h2>How you are identified</h2>
-    <p>Before you subscribe, the app asks you to choose a <strong>Google account</strong> from those already present on your phone. That account is your identity here. It is what lets you get everything back on a new phone, years later, even if your subscription lapsed in between.</p>
-    <p>From it we receive your <strong>e-mail address</strong>, and the account identifier Google gives us. That is all. We do not receive your password, your contacts, your Google Drive, or anything else in your Google account, and we cannot act on your behalf anywhere.</p>
-    <p>We ask for it <strong>only if you subscribe</strong>. If you never buy anything, you are never asked to sign in and we hold nothing about you.</p>
+    <p>Opening SimplyCal requires choosing a <strong>Google account</strong> from those already present on your phone. That account is your identity here. It is what lets you get everything back on a new phone, years later, even if your subscription lapsed in between.</p>
+    <p>From it we receive your <strong>e-mail address</strong>, your <strong>name</strong> and <strong>profile picture</strong> as Google publishes them, and the account identifier Google gives us. That is all. We do not receive your password, your contacts, your Google Drive, or anything else in your Google account, and we cannot act on your behalf anywhere.</p>
+    <p>Your name is used to fill in the first name shown in the app, which you can change. Your profile picture is displayed by the app and never copied to our servers — it is loaded from Google each time.</p>
+    <p>The app asked for an account only before a purchase until August 2026. It now asks at the door, so that everything on a phone belongs to a known account and two people sharing a device never see each other's diary.</p>
     <p>When you buy, Google Play also gives the app a <strong>purchase token</strong>. The app sends it to our server, which asks Google Play whether the purchase is genuine before opening anything. The token identifies a purchase, not a person.</p>
   </section>
   <section>
     <h2>Cloud backup (Premium)</h2>
     <p>If you are a Premium subscriber, the app copies to our servers: the foods and meals you created, your daily entries, your body measurements, your goals and the settings that are not specific to one phone. Photos you attached to your own foods and meals are copied too, reduced in size beforehand.</p>
     <p>The theme, the display language, the reminder time and the subscription state are <strong>not</strong> copied: they belong to one phone.</p>
-    <p>The copy is stored with Google Cloud Firestore and Cloud Storage, in the <strong>northamerica-northeast1 region (Montréal, Canada)</strong>, in a space that only your own identity can read. Access is enforced by server-side security rules, not by the app.</p>
+    <p>The copy is stored with Google Cloud Firestore in the <strong>northamerica-northeast1 region (Montréal, Canada)</strong>, and the photos with Google Cloud Storage in the <strong>us-east1 region (United States)</strong>. Both live in a space that only your own identity can read. Access is enforced by server-side security rules, not by the app.</p>
     <p>It exists for one purpose: so that a lost, broken or replaced phone can get your diary back.</p>
   </section>
   <section>
@@ -77,10 +79,12 @@
     <p>While your subscription is active, we keep it so it can be restored.</p>
     <p>When a subscription ends, the copy becomes <strong>read-only for 180 days</strong>: it stops receiving anything new, but signing in on any phone can still restore it. After those 180 days it is deleted automatically, along with the photos. Your device copy is never touched.</p>
     <p>If you erase your online data, everything we hold is deleted immediately — see <a href="delete-account.html">Delete your account</a>.</p>
+    <p>An account that <strong>never had a subscription</strong> and has not been opened for <strong>twelve months</strong> is deleted, along with the e-mail address attached to it. We write to that address thirty days beforehand; opening the app once is enough to keep the account. The diary stored on your phone is not affected — it does not depend on our servers.</p>
   </section>
   <section>
     <h2>Where your data is, and who processes it</h2>
-    <p>The cloud copy is stored in Canada. Canada holds an adequacy decision from the European Commission, so data from the European Economic Area is transferred there without additional safeguards being required.</p>
+    <p>Your diary is stored in Canada, which holds an adequacy decision from the European Commission: data from the European Economic Area is transferred there without additional safeguards being required.</p>
+    <p>The photos attached to your foods and meals are stored in the <strong>United States</strong>. Google LLC is certified under the EU–U.S. Data Privacy Framework and its UK and Swiss extensions, which provides the basis for that transfer.</p>
     <p>Our only processor is Google (Firebase Authentication — which carries the sign-in — Cloud Firestore, Cloud Storage, Cloud Functions), acting on our instructions. Google Play acts as merchant of record for purchases, under its own terms.</p>
   </section>
   <section>
